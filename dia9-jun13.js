@@ -47,19 +47,15 @@ class DoubleLinkedList{
     }
 
     deleteHead(){
-        console.log("Javier Fonseca", this.head)
-        if(this.head){
-            this.head = this.head.next
-            //this.head.prev = null
-            this.size--
-            return this.size
-        }else{
-            return undefined
-        }
+        let deletedV = this.head.value
+        this.head.prev = null
+        this.head = this.head.next
+        this.size--
+        return deletedV
     }
 
     delete(index){
-        if(!index){
+        if(!index && this.head){
             return this.deleteHead()
         }
         else if(index>=this.size){
@@ -67,6 +63,7 @@ class DoubleLinkedList{
         }
         if(index<this.size){
             let lastNode = this.getLastNode(index-1)
+            let deletedValue = lastNode.next.value
             if(lastNode.next.next){
                 let holdNodefollow = lastNode.next.next
                 holdNodefollow.prev = lastNode
@@ -76,7 +73,7 @@ class DoubleLinkedList{
                 this.tail.prev= lastNode.prev
             }
             this.size--
-            return this.size
+            return deletedValue
         }
     }
 
@@ -101,7 +98,7 @@ DList.insert(3)
 console.log(DList.traverse())
 console.log(DList.reverse())
 //console.log(DList.delete())
-console.log(DList.delete(2))
+console.log(DList.delete(3))
 console.log(DList.delete(0))
 console.log(DList.delete(0))
 console.log(DList.traverse())
