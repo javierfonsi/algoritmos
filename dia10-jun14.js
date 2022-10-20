@@ -103,72 +103,93 @@
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //***********stack with linked list academlo********************
+//class Node{
+//    constructor(value){
+//        this.value = value
+//        this.next = null
+//    }
+//}
+
+//class Stack{
+//    constructor(maxSize){
+//        this.maxSize = maxSize
+//        this.top = null
+//        this.size = 0 
+//    }
+
+//    push(value){
+//        if(this.size >= this.maxSize) return new Error('The stack is full')
+//        let newNode = new Node(value)
+//        if(!this.size){
+//            this.top=newNode
+//        }else{
+//            newNode.next = this.top
+//            this.top=newNode
+//        }
+//        this.size++
+//    }
+
+//    pop(){
+//        //if(this.size===0) return new Error('There are not nodes until')
+//        if(this.top) {
+//            let lastTop = this.top.value
+//            this.top = this.top.next
+//            this.size--
+//            return lastTop
+//        }
+//        return new Error('There are not nodes until')
+
+//    }
+
+//    isEmpty(){
+//        return this.size===0
+//    }
+
+//    isFull(){
+//        return this.size===this.maxSize
+//    }
+
+//    peek(){
+//        return this.top.value
+//    }
+//}
+
+//let stack = new Stack(3)
+//stack.push(50)
+//stack.push(40)
+//stack.push(30)
+////console.log(stack.pop())
+//console.log(stack)
+////console.log(stack.push(20))
+//console.log(stack.isEmpty())
+//console.log(stack.peek())
+//console.log(stack.isFull())
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//************* Ejercicio de parentesis con pilas */
+
+//Usa una pila (Stack) para revisar si un string cuenta con paréntesis balanceados.
+//(), (()), ()(), (((()))) → Balanced
+//)), ((), ((((()), ()()) → Not Balanced
+
+//((())) -> Apertura 3 | Cierre 3 -> Balanceado
+//)(()() -> Apertura 3 | Cierre 3 -> No balanceado
+
+//((())) -> Contador 0
+//)(()() -> Contador 1
+
 class Node{
-    constructor(value){
-        this.value = value
-        this.next = null
+    constructor(){
     }
 }
 
-class Stack{
-    constructor(maxSize){
-        this.maxSize = maxSize
-        this.top = null
-        this.size = 0 
-    }
-
-    push(value){
-        if(this.size >= this.maxSize) return new Error('The stack is full')
-        let newNode = new Node(value)
-        if(!this.size){
-            this.top=newNode
-        }else{
-            newNode.next = this.top
-            this.top=newNode
-        }
-        this.size++
-    }
-
-    pop(){
-        //if(this.size===0) return new Error('There are not nodes until')
-        if(this.top) {
-            let lastTop = this.top.value
-            this.top = this.top.next
-            this.size--
-            return lastTop
-        }
-        return new Error('There are not nodes until')
-
-    }
-
-    isEmpty(){
-        return this.size===0
-    }
-
-    isFull(){
-        return this.size===this.maxSize
-    }
-
-    peek(){
-        return this.top.value
+class Balance{
+    constructor(char){
+        this.top=null
+        this.size=char.length
     }
 }
-
-let stack = new Stack(3)
-stack.push(50)
-stack.push(40)
-stack.push(30)
-//console.log(stack.pop())
-console.log(stack)
-//console.log(stack.push(20))
-console.log(stack.isEmpty())
-console.log(stack.peek())
-console.log(stack.isFull())
-
-
-
-
-
 
 
 
