@@ -167,29 +167,7 @@
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-//************* Ejercicio de parentesis con pilas */
 
-//Usa una pila (Stack) para revisar si un string cuenta con paréntesis balanceados.
-//(), (()), ()(), (((()))) → Balanced
-//)), ((), ((((()), ()()) → Not Balanced
-
-//((())) -> Apertura 3 | Cierre 3 -> Balanceado
-//)(()() -> Apertura 3 | Cierre 3 -> No balanceado
-
-//((())) -> Contador 0
-//)(()() -> Contador 1
-
-class Node{
-    constructor(){
-    }
-}
-
-class Balance{
-    constructor(char){
-        this.top=null
-        this.size=char.length
-    }
-}
 
 
 
